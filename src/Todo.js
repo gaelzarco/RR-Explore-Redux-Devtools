@@ -1,3 +1,4 @@
+import './App.css'
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addTodo, removeOne, clearTodo } from './features/todoSlice'
@@ -7,7 +8,7 @@ const Todo = () => {
     const dispatch = useDispatch()
     const [input, setInput] = useState('')
 
-    const renderItems = items.map((item, index) => <li key={index} onClick={() => dispatch(removeOne(index))}>{item}</li>)
+    const renderItems = items.map((item, index) => <h2 key={index} onClick={() => dispatch(removeOne(index))}>{item}</h2>)
 
     const submitForm = (e) => {
         e.preventDefault()
@@ -18,7 +19,7 @@ const Todo = () => {
         <div>
             <form onSubmit={(e) => submitForm(e)}>
                 <input type="text" onChange={(e) => setInput(e.target.value)} />
-                <button type="submit">Submit</button>
+                <button type="submit">Add To-do</button>
             </form>
             <ul>
                 {renderItems}

@@ -27,7 +27,7 @@ const Counter = () => {
             </button>
             <form onSubmit={(e) => byAmount(e)}>
                 <input type="number" onChange={(e) => setInput(e.target.value)} />
-                <button type="submit">Submit</button>
+                <button type="submit">Custom Amount</button>
             </form>
         </div>
     )
